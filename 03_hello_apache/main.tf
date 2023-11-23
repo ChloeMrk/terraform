@@ -32,6 +32,7 @@ resource "aws_instance" "hello"{
     ami = "ami-00983e8a26e4c9bd9"
     instance_type = "t2.micro"
     vpc_security_group_ids = [aws_security_group.allow_HTTP.id]
+    subnet_id = "subnet-0770b9c020023143f"
     user_data = <<-EOF
               #!/bin/bash
               sudo apt-get update

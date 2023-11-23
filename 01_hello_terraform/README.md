@@ -1,25 +1,37 @@
+# Introduction à Terraform
+
 Je connaissais déjà Terraform de nom car quand j'ai commencé dans mon entreprise on voulait commencer à automatiser la création sur AWS et on hésitait entre Terraform et Cloudformation.
 
-# Source
-https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
-https://docs.aws.amazon.com/fr_fr/cli/latest/userguide/getting-started-install.html
-https://devopssec.fr/article/premiere-infrastructure-aws-terraform
+## Sources Utiles
+- [Installer Terraform CLI](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
+- [Installer AWS CLI](https://docs.aws.amazon.com/fr_fr/cli/latest/userguide/getting-started-install.html)
+- [Guide Terraform pour la première infrastructure AWS](https://devopssec.fr/article/premiere-infrastructure-aws-terraform)
 
-# Installation Terraform
+## Installation de Terraform
+Vous pouvez installer Terraform en utilisant Chocolatey avec la commande suivante :
+```shell
 choco install terraform
 
-# Installation AWS CLI
+```
+
+### Installation AWS CLI
+
 msiexec.exe /i https://awscli.amazonaws.com/AWSCLIV2.msi
 
-# Créer USER IAM
-Sur votre compte AWS créer un utilisateur et créer un group qui aura accès en Administrateur/
+### Création d'un utilisateur IAM
 
-Cette parti là j'ai eu une difficulté parce que je n'arrivais as à trouver où je devais créer l'access list. En cherchant j'ai trouvé.
+Sur votre compte AWS, créez un utilisateur IAM et attribuez-lui un groupe avec des droits d'administrateur sur tous les services AWS.
 
-Après avoir créer l'utisateur il faut cliquer dessus puis aller sur Security Credentials puis crée une access key.
+J'ai rencontré une difficulté lors de la création de l'access key. Voici comment vous pouvez le faire : après avoir créé l'utilisateur, cliquez sur son nom, puis accédez à "Security Credentials" et créez une access key.
+
+### Utilisation de Terraform
+
+Lorsque vous utilisez Terraform, faites attention à spécifier la région AWS appropriée lorsque vous récupérez le code AMI.
+
+### Commandes Terraform
 
 
-# Code terraform
-
-
-![Alt text](image.png)
+- terraform init: Initialise le répertoire de travail Terraform.
+- terraform plan: Affiche un plan des actions que Terraform exécutera.
+- terraform apply: Applique les modifications spécifiées dans votre configuration Terraform.
+- terraform destroy: Détruit les ressources créées avec Terraform.
