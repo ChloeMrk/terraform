@@ -25,8 +25,13 @@ Sur votre compte AWS, créez un utilisateur IAM et attribuez-lui un groupe avec 
 J'ai rencontré une difficulté lors de la création de l'access key. Voici comment vous pouvez le faire : après avoir créé l'utilisateur, cliquez sur son nom, puis accédez à "Security Credentials" et créez une access key.
 
 ### Utilisation de Terraform
+Pour la connexion avec AWS bien renseigner dans provider l'access key que vous avez crée auparavant et la région.
+Faites attention à spécifier la région AWS appropriée lorsque vous récupérez le code AMI.
 
-Lorsque vous utilisez Terraform, faites attention à spécifier la région AWS appropriée lorsque vous récupérez le code AMI.
+Pour créer une ressource il faut:
+
+- désigner le type de ressource
+- le nom de la ressource que vous voulez crée
 
 ### Commandes Terraform
 
