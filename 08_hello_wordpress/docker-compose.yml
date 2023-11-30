@@ -1,0 +1,23 @@
+services:
+  database:
+    container_name: mysql-container
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=mydb
+      - MYSQL_USER=chloe
+      - MYSQL_password=root
+  wordpress:
+    image: wordpress:latest
+    container_name: wordpress-container
+    restart: on-failure
+    ports:
+      - 80:80
+    environment:
+      - WORDPRESS_DB_HOST=database
+      - WORDPRESS_DB_USER=root
+      - WORDPRESS_DB_PASSWORD=root
+      - WORDPRESS_DB_NAME=wordpress
+    depends_on:
+      - database
+    
