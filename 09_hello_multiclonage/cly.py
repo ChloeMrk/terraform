@@ -6,7 +6,6 @@ def run_create_instance(instance_count):
     print("Terraform apply terminé avec succès.")
 
 def main():
-    # Vérifier si un argument a été fourni
     if len(sys.argv) != 2:
         print("Usage: python cly.py <instance_count>")
         sys.exit(1)
